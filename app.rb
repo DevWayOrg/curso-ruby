@@ -1,69 +1,68 @@
-# String
-phrase = "Hello World"
-puts phrase.class
-p phrase
+# Local variable
+age = 30
+p age
 
-puts "=" * 80
+# Instance variable
+class MyCustomClass
+  def initialize
+    @a = 2
+  end
 
-# Integer
+  def print_instance
+    puts "O valor de @a é #{@a}"
+  end
+end
 
-num = 1_000
-puts num.class
-p num
+p MyCustomClass.new.instance_variable_get(:@a)
+MyCustomClass.new.print_instance
 
-puts "=" * 80
+# Class variable
 
-# Float
+class MyCustomClass
+  @@hello = 'World'
 
-num2 = -210.20
-puts num2.class
-p num2
+  def print_instance
+    puts "O valor de @@hello é #{@@hello}"
+  end
 
-puts "=" * 80
-# Booleans
-# TrueClass
+  def self.print_class
+    puts "O valor de @@hello é #{@@hello}"
+  end
+end
 
-is_raining = true
-puts is_raining.class
-p is_raining
+MyCustomClass.new.print_instance
+MyCustomClass.print_class
 
-puts "=" * 80
+class Counter
+  @@count = 0
 
-# FalseClass
-is_sunny = false
-puts is_sunny.class
-p is_sunny
+  def initialize
+    @@count += 1
+  end
 
-puts "=" * 80
-# Null
-# NilClass
+  def print_count
+    puts "O valor de @@count é #{@@count}"
+  end
+end
 
-user = nil
-puts user.class
-p user
+Counter.new.print_count
 
-puts "=" * 80
-# Array
+Counter.new.print_count
 
-arr = [1,2,3] # Array.new
-puts arr.class
-p arr
+Counter.new.print_count
 
-puts "=" * 80
+# Global variable
 
-# Hash
+$redis = {}
 
-hash = {hello: "world"} # Hash.new
-puts hash.class
-p hash
+p $redis
 
-hash = {"hello" => "world"}
-p hash
+# Constant Variable
 
-puts "=" * 80
+Alphabect = ('a'..'z').to_a
 
-# Symbol
+p Alphabect
 
-my_symbol = :ok
-puts my_symbol.class
-p my_symbol
+Alphabect += ['ç']
+
+p Alphabect
