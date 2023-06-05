@@ -1,6 +1,6 @@
 # String
 phrase = "Hello World"
-puts "String"
+puts phrase.class
 p phrase
 
 puts "=" * 80
@@ -8,7 +8,7 @@ puts "=" * 80
 # Integer
 
 num = 1_000
-puts "Integer"
+puts num.class
 p num
 
 puts "=" * 80
@@ -16,7 +16,7 @@ puts "=" * 80
 # Float
 
 num2 = -210.20
-puts "Float"
+puts num2.class
 p num2
 
 puts "=" * 80
@@ -24,14 +24,14 @@ puts "=" * 80
 # TrueClass
 
 is_raining = true
-puts "TrueClass"
+puts is_raining.class
 p is_raining
 
 puts "=" * 80
 
 # FalseClass
 is_sunny = false
-puts "FalseClass"
+puts is_sunny.class
 p is_sunny
 
 puts "=" * 80
@@ -39,14 +39,14 @@ puts "=" * 80
 # NilClass
 
 user = nil
-puts "NilClass"
+puts user.class
 p user
 
 puts "=" * 80
 # Array
 
 arr = [1,2,3] # Array.new
-puts "Array"
+puts arr.class
 p arr
 
 puts "=" * 80
@@ -54,7 +54,7 @@ puts "=" * 80
 # Hash
 
 hash = {hello: "world"} # Hash.new
-puts "Hash"
+puts hash.class
 p hash
 
 hash = {"hello" => "world"}
@@ -65,5 +65,5 @@ puts "=" * 80
 # Symbol
 
 my_symbol = :ok
-puts "Symbol"
+puts my_symbol.class
 p my_symbol
