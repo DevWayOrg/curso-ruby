@@ -1,4 +1,7 @@
-puts 'Digite o seu nome:'
-user = gets.to_s.strip
+puts 'Digite o primeiro número:'
+a = gets.to_i
 
-puts 'Hello ' + user
+puts 'Digite o segundo número:'
+b = gets.to_i
+
+puts 'A soma é ' + (a + b).to_s
