@@ -25,14 +25,11 @@ choice = CONVERSION[user_choice] || ROCK
 
 puts "You chose #{NUMBER_CONVERSION[choice]} and the computer chose #{NUMBER_CONVERSION[computer_choice]}"
 
-if choice == computer_choice
+case (choice - computer_choice + NUM_CHOICES) % NUM_CHOICES
+when 0
   puts "It's a tie!"
-elsif choice == ROCK && computer_choice == SCISSORS
+when 1
   puts 'You win!'
-elsif choice == PAPER && computer_choice == ROCK
-  puts 'You win!'
-elsif choice == SCISSORS && computer_choice == PAPER
-  puts 'You win!'
-else
+when 2
   puts 'You lose!'
 end
