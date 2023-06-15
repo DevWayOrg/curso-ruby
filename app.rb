@@ -1,68 +1,38 @@
-# Local variable
-age = 30
-p age
+ROCK = 0
+PAPER = 1
+SCISSORS = 2
 
-# Instance variable
-class MyCustomClass
-  def initialize
-    @a = 2
-  end
+CONVERSION = {
+  'R' => ROCK,
+  'P' => PAPER,
+  'S' => SCISSORS
+}.freeze
 
-  def print_instance
-    puts "O valor de @a é #{@a}"
-  end
+NUMBER_CONVERSION = {
+  ROCK => 'Rock',
+  PAPER => 'Paper',
+  SCISSORS => 'Scissors'
+}.freeze
+
+NUM_CHOICES = 3
+computer_choice = rand(3) # 0, 1, or 2
+
+puts "Let's play Rock, Paper, Scissors!"
+puts 'Enter your choice: (R)ock, (P)aper, or (S)cissors'
+puts 'If you enter a wrong option, we will play Rock for you!'
+user_choice = gets.chomp
+choice = CONVERSION[user_choice] || ROCK
+
+puts "You chose #{NUMBER_CONVERSION[choice]} and the computer chose #{NUMBER_CONVERSION[computer_choice]}"
+
+if choice == computer_choice
+  puts "It's a tie!"
+elsif choice == ROCK && computer_choice == SCISSORS
+  puts 'You win!'
+elsif choice == PAPER && computer_choice == ROCK
+  puts 'You win!'
+elsif choice == SCISSORS && computer_choice == PAPER
+  puts 'You win!'
+else
+  puts 'You lose!'
 end
-
-p MyCustomClass.new.instance_variable_get(:@a)
-MyCustomClass.new.print_instance
-
-# Class variable
-
-class MyCustomClass
-  @@hello = 'World'
-
-  def print_instance
-    puts "O valor de @@hello é #{@@hello}"
-  end
-
-  def self.print_class
-    puts "O valor de @@hello é #{@@hello}"
-  end
-end
-
-MyCustomClass.new.print_instance
-MyCustomClass.print_class
-
-class Counter
-  @@count = 0
-
-  def initialize
-    @@count += 1
-  end
-
-  def print_count
-    puts "O valor de @@count é #{@@count}"
-  end
-end
-
-Counter.new.print_count
-
-Counter.new.print_count
-
-Counter.new.print_count
-
-# Global variable
-
-$redis = {}
-
-p $redis
-
-# Constant Variable
-
-Alphabect = ('a'..'z').to_a
-
-p Alphabect
-
-Alphabect += ['ç']
-
-p Alphabect
