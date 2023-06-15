@@ -25,11 +25,17 @@ choice = CONVERSION[user_choice] || ROCK
 
 puts "You chose #{NUMBER_CONVERSION[choice]} and the computer chose #{NUMBER_CONVERSION[computer_choice]}"
 
-case (choice - computer_choice + NUM_CHOICES) % NUM_CHOICES
-when 0
-  puts "It's a tie!"
-when 1
-  puts 'You win!'
-when 2
-  puts 'You lose!'
+case computer_choice
+when ROCK
+  puts 'You win!' if choice == PAPER
+  puts 'You lose!' if choice == SCISSORS
+  puts "It's a tie!" if choice == ROCK
+when PAPER
+  puts 'You win!' if choice == SCISSORS
+  puts 'You lose!' if choice == ROCK
+  puts "It's a tie!" if choice == PAPER
+when SCISSORS
+  puts 'You win!' if choice == ROCK
+  puts 'You lose!' if choice == PAPER
+  puts "It's a tie!" if choice == SCISSORS
 end
